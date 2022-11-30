@@ -10,23 +10,24 @@ db.sequelize.sync();
 
 app.get('/:id', async (req, res, next) => {
   const id = req.params.id;
+  // User.find
   const foundUser = await User.findOne({
     where: { id },
-    // attributes: [
-    //   "id",
-    //   "name",
-    //   "nickname",
-    //   "age",
-    //   "InfoId",
-    //   [Sequelize.col("Info.race"), "race"],
-    //   [Sequelize.col("Info.country"), "country"],
-    //   [Sequelize.col("Info.home"), "home"],
-    //   [Sequelize.col("Info.height"), "height"],
-    //   [Sequelize.col("Info.weight"), "weight"],
-    // ],
+    attributes: [
+      "id",
+      "name",
+      "nickname",
+      "age",
+      "InfoId",
+      [Sequelize.col("Info.race"), "race"],
+      [Sequelize.col("Info.country"), "country"],
+      [Sequelize.col("Info.home"), "home"],
+      [Sequelize.col("Info.height"), "height"],
+      [Sequelize.col("Info.weight"), "weight"],
+    ],
     include: {
       model: Info,
-      // attributes: []
+      attributes: []
       // attributes: ["race", "country", "home"]
     }
 

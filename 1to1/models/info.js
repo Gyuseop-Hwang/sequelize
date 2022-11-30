@@ -35,7 +35,7 @@ module.exports = class Info extends Sequelize.Model {
   }
 
   static associate(db) {
-    db.Info.hasOne(db.User /*{ foreignKey: 'customUserId', targetKey: 'id', /*onDelete : "cascade", onUpdate : "cascade"}*/);
+    db.Info.hasOne(db.User, /*{ foreignKey: 'customUserId', sourceKey: 'id', /*onDelete : "cascade", onUpdate : "cascade"}*/);
   }
   // Comment가 User에 속한다. Comment의 Column "commenter"는 User의 "id"를 참조한다.
 };

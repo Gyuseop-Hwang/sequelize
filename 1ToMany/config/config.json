@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Fhqls78@@9",
-    "database": "OneToOne",
+    "database": "OneToMany",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging" : false

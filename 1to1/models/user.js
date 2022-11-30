@@ -79,8 +79,8 @@ module.exports = class User extends Sequelize.Model {
     });
   }
 
-  static associate(db) {
-    db.User.belongsTo(db.Info /*{ foreignKey: 'customUserId', targetKey: 'id', /*onDelete : "cascade", onUpdate : "cascade"}*/);
+  static associate(db) { // InfoId
+    db.User.belongsTo(db.Info, /*{ foreignKey: 'customUserId', targetKey: 'id', /*onDelete : "cascade", onUpdate : "cascade"}*/);
   }
   // Comment가 User에 속한다. Comment의 Column "commenter"는 User의 "id"를 참조한다.
 };
